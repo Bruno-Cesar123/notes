@@ -29,8 +29,6 @@ export function App() {
           content: 'hello world'
         }} />
 
-
-
       </div>
 
     </div>
