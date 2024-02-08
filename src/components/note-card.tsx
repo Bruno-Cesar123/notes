@@ -6,12 +6,14 @@ import { X } from "lucide-react"
 
 interface NoteCardProps {
   note: {
+    id: string
     date: Date
     content: string
   }
+  onNoteDeleted: (id: string) => void
 }
 
-export function NoteCard({ note }: NoteCardProps) {
+export function NoteCard({ note, onNoteDeleted }: NoteCardProps) {
   
 
   return (
@@ -47,6 +49,7 @@ export function NoteCard({ note }: NoteCardProps) {
 
             <button 
               type="button"
+              onClick={() => onNoteDeleted(note.id)}
               className="w-full bg-slate-800 py-4 text-center text-sm text-slate-300 outline-none font-medium group"
             >
               Deseja <span className="text-red-400 hover:underline group-hover:underline">apagar essa nota</span>?
